@@ -1,0 +1,139 @@
+*{
+    font-family:'Lora', serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    background-color: #dee2fd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  main.calculator {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    min-width: 320px;
+    max-width: 380px;
+    height: 73vh;
+    border-radius: 2.5rem;
+    padding: 1rem;
+    background-color: #666575;
+    overflow: hidden;
+    transition: 0.7s all;
+    animation: popin 0.4s ease-in both alternate;
+  }
+
+  @keyframes popin {
+    0%{
+      opacity: 0.3;
+    }
+    50%{
+      opacity: 0.6;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+  section.display {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: flex-end;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    background-color: #c1e3c4;
+    margin-bottom: 1.5rem;
+    height: 35%;
+    filter: drop-shadow(0px 2px 2px #5d5c6a);
+    overflow: hidden;
+  }
+  textarea {
+    transition: 0.8s all ease-in;
+    position: absolute;
+    resize: none;
+    overflow: hidden;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-align: end;
+    left: 0;
+  }
+  p.heading {
+    transition: 0.4s display ease;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  textarea#current {
+    top: 50%;
+    font-size: 35px;
+    height: 50%;
+    width: 95%;
+  }
+  textarea#history {
+    top: 30px;
+    font-size: 20px;
+    height: 45%;
+    width: 95%;
+  }
+  
+  section.buttons-grid {
+    height: 60%;
+    display: grid;
+    place-items: center;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  
+  button {
+    color: #ceced8;
+    filter: drop-shadow(0px 1.2px 0.6px #eeeeef);
+    font-size: large;
+    text-align: center;
+    outline: none;
+    border: none;
+    width: 55px;
+    height: 55px;
+    border-radius: 1rem;
+    transition: 0.2s all;
+  }
+  
+  button:hover {
+    opacity: 0.7;
+  }
+  button:active {
+    opacity: 0.3;
+  }
+  
+  button.number {
+    background-color: #817f98;
+  }
+  
+  button.clear {
+    background-color: #9297d7;
+    filter: drop-shadow(0px 1.2px 0.6px #eeeeef);
+  }
+  button.operation {
+    background-color: #f37b83dd;
+    filter: drop-shadow(0px 1.4px 0.6px #eeeeef);
+  }
+  
+  @media screen and (max-width: 450px){
+  
+   main.calculator{
+    padding: 1.2rem;
+    height: 70vh;
+   }
+   button{
+    width: 60px;
+    height: 60px;
+   }
+   
+  }
